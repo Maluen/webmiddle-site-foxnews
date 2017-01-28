@@ -35,7 +35,7 @@ webmiddle.evaluate((
 
 ### SearchArticles
 
-Scrapes the HTML search articles page by using an headless browser, since the articles list is loaded on client-side.
+Scrapes the HTML search articles page by using an headless browser (PhantomJS), since the articles list is loaded on client-side.
 
 **Properties**:
 
