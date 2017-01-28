@@ -78,8 +78,7 @@ pageNumber             | 0
         "date": "Jan 25, 2017",
         "image": "http://a57.foxnews.com/www.foxnews.com/content/dam/fox-news/images/2016/09/20/180/102/senior-using-a-laptop-internet-istock-large.jpg"
       }
-    },
-    ...
+    }
 }
 ```
 
