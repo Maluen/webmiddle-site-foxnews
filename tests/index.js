@@ -9,7 +9,7 @@ test.beforeEach(t => {
 test('SearchArticles', async t => {
   const SearchArticles = FoxNews.service('SearchArticles');
 
-  await evaluate(createContext(t.context.webmiddle, { expectResource: true }), (
+  const resource = await evaluate(createContext(t.context.webmiddle, { expectResource: true }), (
     <SearchArticles
       name="searchArticles"
       query="science"
@@ -17,14 +17,20 @@ test('SearchArticles', async t => {
       startYear={2007}
     />
   ));
+
+  t.is(resource.contentType, 'application/json');
+  t.is(typeof resource.content.root, 'object');
 });
 
 test('ArticleDetails', async t => {
   const ArticleDetails = FoxNews.service('ArticleDetails');
 
-  await evaluate(createContext(t.context.webmiddle, { expectResource: true }), (
+  const resource = await evaluate(createContext(t.context.webmiddle, { expectResource: true }), (
     <ArticleDetails
       url="http://www.foxnews.com/science/2017/01/19/nasa-study-paving-way-for-human-travel-to-mars.html"
     />
   ));
+
+  t.is(resource.contentType, 'application/json');
+  t.is(typeof resource.content.root, 'object');
 });
