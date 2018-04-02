@@ -1,10 +1,8 @@
-import WebMiddle from 'webmiddle';
-import settings from './settings';
 import * as services from './services';
+import settings from './settings';
 
-export default new WebMiddle({
+export default {
   name: 'foxnews.com',
   services,
-});
-
-export { settings };
+  settings,
+};

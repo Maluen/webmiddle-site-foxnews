@@ -1,15 +1,16 @@
 import test from 'ava';
-import FoxNews from '../src/index.js';
+import { services } from '../src/index.js';
 import WebMiddle, { evaluate, createContext } from 'webmiddle';
 
 test.beforeEach(t => {
-  t.context.webmiddle = new WebMiddle();
+  const webmiddle = new WebMiddle();
+  t.context.context = createContext(webmiddle);
 });
 
 test('SearchArticles', async t => {
-  const SearchArticles = FoxNews.service('SearchArticles');
+  const { SearchArticles } = services;
 
-  const resource = await evaluate(createContext(t.context.webmiddle, { expectResource: true }), (
+  const resource = await evaluate(createContext(t.context.context, { expectResource: true }), (
     <SearchArticles
       name="searchArticles"
       query="science"
@@ -23,9 +24,9 @@ test('SearchArticles', async t => {
 });
 
 test('ArticleDetails', async t => {
-  const ArticleDetails = FoxNews.service('ArticleDetails');
+  const { ArticleDetails } = services;
 
-  const resource = await evaluate(createContext(t.context.webmiddle, { expectResource: true }), (
+  const resource = await evaluate(createContext(t.context.context, { expectResource: true }), (
     <ArticleDetails
       url="http://www.foxnews.com/science/2017/01/19/nasa-study-paving-way-for-human-travel-to-mars.html"
     />
