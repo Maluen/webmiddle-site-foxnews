@@ -2,14 +2,14 @@ import WebMiddle, { PropTypes } from 'webmiddle';
 import Pipe from 'webmiddle-service-pipe';
 import Browser from 'webmiddle-service-browser';
 import HtmlToJson, { helpers } from 'webmiddle-service-cheerio-to-json';
-import config from '../config';
+import settings from '../settings';
 
 const {
   elText, elAttr, elMap, elPipe,
 } = helpers;
 
 function toStart(pageNumber) {
-  return pageNumber * config.resultsPerPage;
+  return pageNumber * settings.resultsPerPage;
 }
 
 function normalizeCount() {
