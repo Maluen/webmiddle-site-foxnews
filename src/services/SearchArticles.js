@@ -1,4 +1,4 @@
-import webmiddle, { PropTypes } from 'webmiddle';
+import { PropTypes } from 'webmiddle';
 import Pipe from 'webmiddle-service-pipe';
 import Browser from 'webmiddle-service-browser';
 import HtmlToJson, { helpers } from 'webmiddle-service-cheerio-to-json';
