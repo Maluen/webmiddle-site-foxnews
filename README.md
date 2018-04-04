@@ -11,11 +11,13 @@ npm install --save webmiddle-site-foxnews
 ## Usage
 
 ```jsx
-import { evaluate, createContext } from 'webmiddle';
+import { rootContext } from 'webmiddle';
 import FoxNews from 'webmiddle-site-foxnews';
 const { SearchArticles } = FoxNews.services;
 
-evaluate(createContext({ expectResource: true }), (
+rootContext.extend({
+  expectResource: true
+}).evaluate((
   <SearchArticles
     name="searchArticles"
     query="science"

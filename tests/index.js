@@ -1,15 +1,13 @@
 import test from 'ava';
 import { services } from '../src/index.js';
-import { evaluate, createContext } from 'webmiddle';
-
-test.beforeEach(t => {
-  t.context.context = createContext();
-});
+import { rootContext } from 'webmiddle';
 
 test('SearchArticles', async t => {
   const { SearchArticles } = services;
 
-  const resource = await evaluate(createContext(t.context.context, { expectResource: true }), (
+  const resource = await rootContext.extend({
+    expectResource: true
+  }).evaluate((
     <SearchArticles
       name="searchArticles"
       query="science"
@@ -25,7 +23,9 @@ test('SearchArticles', async t => {
 test('ArticleDetails', async t => {
   const { ArticleDetails } = services;
 
-  const resource = await evaluate(createContext(t.context.context, { expectResource: true }), (
+  const resource = await rootContext.extend({
+    expectResource: true
+  }).evaluate((
     <ArticleDetails
       url="http://www.foxnews.com/science/2017/01/19/nasa-study-paving-way-for-human-travel-to-mars.html"
     />
