@@ -13,7 +13,7 @@ npm install --save webmiddle-site-foxnews
 ```jsx
 import { rootContext } from 'webmiddle';
 import FoxNews from 'webmiddle-site-foxnews';
-const { SearchArticles } = FoxNews.services;
+const { SearchArticles } = FoxNews.components;
 
 rootContext.extend({
   expectResource: true
@@ -29,11 +29,11 @@ rootContext.extend({
 });
 ```
 
-## Services
+## Components
 
 ### SearchArticles
 
-Scrapes the HTML search articles page by using an headless browser (PhantomJS), since the articles list is loaded on client-side.
+Scrapes the HTML search articles page by using an headless browser (Headless Chrome), since the articles list is loaded on client-side.
 
 **Properties**:
 

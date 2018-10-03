@@ -1,7 +1,7 @@
 import { PropTypes } from 'webmiddle';
-import Pipe from 'webmiddle-service-pipe';
-import HttpRequest from 'webmiddle-service-http-request';
-import HtmlToJson, { helpers } from 'webmiddle-service-cheerio-to-json';
+import Pipe from 'webmiddle-component-pipe';
+import HttpRequest from 'webmiddle-component-http-request';
+import HtmlToJson, { helpers } from 'webmiddle-component-cheerio-to-json';
 
 const {
   elText, elAttr, elMap, elJoin, elPipe,

@@ -1,8 +1,8 @@
-import * as services from './services';
+import * as components from './components';
 import settings from './settings';
 
 export default {
   name: 'foxnews.com',
-  services,
+  components,
   settings,
 };

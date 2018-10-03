@@ -1,9 +1,9 @@
 import test from 'ava';
-import { services } from '../src/index.js';
-import { rootContext } from 'webmiddle';
+import { components } from '../src/index.js';
+import { rootContext, isResource } from 'webmiddle';
 
 test('SearchArticles', async t => {
-  const { SearchArticles } = services;
+  const { SearchArticles } = components;
 
   const resource = await rootContext.extend({
     expectResource: true
@@ -16,12 +16,13 @@ test('SearchArticles', async t => {
     />
   ));
 
+  t.true(isResource(resource));
   t.is(resource.contentType, 'application/json');
   t.is(typeof resource.content.root, 'object');
 });
 
 test('ArticleDetails', async t => {
-  const { ArticleDetails } = services;
+  const { ArticleDetails } = components;
 
   const resource = await rootContext.extend({
     expectResource: true
@@ -31,6 +32,7 @@ test('ArticleDetails', async t => {
     />
   ));
 
+  t.true(isResource(resource));
   t.is(resource.contentType, 'application/json');
   t.is(typeof resource.content.root, 'object');
 });

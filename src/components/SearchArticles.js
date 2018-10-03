@@ -1,7 +1,7 @@
 import { PropTypes } from 'webmiddle';
-import Pipe from 'webmiddle-service-pipe';
-import Browser from 'webmiddle-service-browser';
-import HtmlToJson, { helpers } from 'webmiddle-service-cheerio-to-json';
+import Pipe from 'webmiddle-component-pipe';
+import Browser from 'webmiddle-component-browser';
+import HtmlToJson, { helpers } from 'webmiddle-component-cheerio-to-json';
 import settings from '../settings';
 
 const {
