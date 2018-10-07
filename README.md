@@ -2,6 +2,8 @@
 
 > The site [webmiddle](https://github.com/webmiddle/webmiddle) for [Fox News](http://www.foxnews.com/)
 
+## NOTE: THIS PROJECT IS DEPRECATED AS IS NOT SUPPORTED ANYMORE.
+
 ## Install
 
 ```bash
