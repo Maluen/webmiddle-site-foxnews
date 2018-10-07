@@ -1,6 +1,8 @@
 import test from 'ava';
-import { components } from '../src/index.js';
+import foxNews from '../src/index';
 import { rootContext, isResource } from 'webmiddle';
+
+const { components } = foxNews;
 
 test('SearchArticles', async t => {
   const { SearchArticles } = components;
